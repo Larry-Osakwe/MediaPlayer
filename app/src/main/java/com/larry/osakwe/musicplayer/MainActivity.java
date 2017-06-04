@@ -10,10 +10,12 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import static android.R.attr.onClick;
+import static com.larry.osakwe.musicplayer.R.id.play;
 
 public class MainActivity extends AppCompatActivity {
 
-    MediaPlayer mediaPlayer;
+    private MediaPlayer mediaPlayer;
+    private int currentPos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button play = (Button) findViewById(R.id.play);
 
+        mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.neverhadit);
         //Find the View that shows the numbers category
 
         //Set a click listener on that view
@@ -29,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
             //The code in this method will be executed when the numbers View is clicked on.
             @Override
             public void onClick(View view) {
-                mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.neverhadit);
                 mediaPlayer.start();
 
             }
@@ -45,13 +47,43 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (mediaPlayer.isPlaying()) {
-                    mediaPlayer.stop();
-                    mediaPlayer.release();
+                    mediaPlayer.pause();
+                    currentPos = mediaPlayer.getCurrentPosition();
                 }
 
             }
         });
+
+        Button mute = (Button) findViewById(R.id.mute);
+
+        //Find the View that shows the numbers category
+
+        //Set a click listener on that view
+        mute.setOnClickListener(new View.OnClickListener() {
+            //The code in this method will be executed when the numbers View is clicked on.
+            @Override
+            public void onClick(View view) {
+                    mediaPlayer.setVolume(0, 0);
+
+            }
+        });
+
+        Button unmute = (Button) findViewById(R.id.unmute);
+
+        //Find the View that shows the numbers category
+
+        //Set a click listener on that view
+        unmute.setOnClickListener(new View.OnClickListener() {
+            //The code in this method will be executed when the numbers View is clicked on.
+            @Override
+            public void onClick(View view) {
+                mediaPlayer.setVolume(1.0f, 1.0f);
+
+            }
+        });
     }
+
+
 
 
     @Override
