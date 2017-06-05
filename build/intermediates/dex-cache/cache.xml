@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\Larry Osakwe\AndroidStudioProjects\MediaPlayer\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="caff8e51a24901cfc9cd7e1cf83d84f4cb0c103b">
+        <dex dex="C:\Users\Larry Osakwe\AndroidStudioProjects\MediaPlayer\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_cfe03847eb2b4d217b03a4fe477574739a397478\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Larry Osakwe\AndroidStudioProjects\MediaPlayer\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3c1140b16867abee73a54799d34f365360418873">
+        <dex dex="C:\Users\Larry Osakwe\AndroidStudioProjects\MediaPlayer\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_2fb7780f9eff3802b332e1914a99c4d698e5f107\classes.dex" />
+    </item>
+
+</items>

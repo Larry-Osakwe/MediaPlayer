@@ -1,16 +1,11 @@
 package com.larry.osakwe.musicplayer;
 
-import android.content.Intent;
 import android.media.MediaPlayer;
-import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
-
-import static android.R.attr.onClick;
-import static com.larry.osakwe.musicplayer.R.id.play;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -81,10 +76,17 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                Toast aToast = Toast.makeText(MainActivity.this, "I'm done!", Toast.LENGTH_SHORT);
+                aToast.show();
+            }
+
+        });
     }
-
-
-
 
     @Override
     protected void onDestroy() {
